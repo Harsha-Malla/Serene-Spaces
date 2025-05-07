@@ -1,0 +1,111 @@
+/* Basic Styles and Navigation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* Collections Section */
+.collections {
+    padding: 50px 20px;
+}
+
+.collection-cards .card {
+    position: relative;
+}
+
+.quick-view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #f56c42;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Floating Cart Button */
+.floating-cart {
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    background-color: #f56c42;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #f56c42;
+    z-index: 10;
+}
+
+/* Notification Pop
