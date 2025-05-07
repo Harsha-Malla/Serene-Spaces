@@ -4,168 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serene Spaces - Home Decor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Serene Spaces</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Welcome to Serene Spaces</h1>
-        <p>Your Dream Home Awaits</p>
-        <a href="#collections" class="btn">Explore Collections</a>
-    </section>
-
-    <!-- Collections Section -->
-    <section id="collections" class="collections">
-        <h2>Our Collections</h2>
-        <div class="collection-cards">
-            <div class="card">
-                <img src="furniture.jpg" alt="Furniture">
-                <h3>Furniture</h3>
-                <div class="quick-view">Quick View</div>
-            </div>
-            <div class="card">
-                <img src="wall-art.jpg" alt="Wall Art">
-                <h3>Wall Art</h3>
-                <div class="quick-view">Quick View</div>
-            </div>
-            <div class="card">
-                <img src="lighting.jpg" alt="Lighting">
-                <h3>Lighting</h3>
-                <div class="quick-view">Quick View</div>
-            </div>
-            <div class="card">
-                <img src="rugs.jpg" alt="Rugs">
-                <h3>Rugs</h3>
-                <div class="quick-view">Quick View</div>
-            </div>
+    <!-- Hero Section with Background Video -->
+    <section class="hero">
+        <video autoplay loop muted>
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Serene Spaces</h1>
+            <p>Your Dream Home Awaits</p>
+            <a href="#collections" class="btn">Explore Collections</a>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <a href="image1.jpg" class="lightbox">
-                <img src="image1-thumb.jpg" alt="Room 1">
-            </a>
-            <a href="image2.jpg" class="lightbox">
-                <img src="image2-thumb.jpg" alt="Room 2">
-            </a>
-            <a href="image3.jpg" class="lightbox">
-                <img src="image3-thumb.jpg" alt="Room 3">
-            </a>
-            <a href="image4.jpg" class="lightbox">
-                <img src="image4-thumb.jpg" alt="Room 4">
-            </a>
+    <!-- Product Search Bar -->
+    <input type="text" id="product-search" class="search-bar" placeholder="Search for products...">
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn">↑</button>
+
+    <!-- Special Offer Countdown -->
+    <div id="countdown">
+        <h3>Special Offer Ending In:</h3>
+        <div id="timer">
+            <span id="days"></span>:<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <p>"Serene Spaces helped me transform my living room. The furniture is exceptional!"</p>
-                    <h3>John Doe</h3>
-                    <p>Customer</p>
-                </div>
-                <div class="swiper-slide">
-                    <p>"I absolutely love the lighting collection. It added the perfect ambiance to my home."</p>
-                    <h3>Jane Smith</h3>
-                    <p>Customer</p>
-                </div>
-                <div class="swiper-slide">
-                    <p>"The wall art collection was a game-changer for my living room. Highly recommend!"</p>
-                    <h3>Emily Brown</h3>
-                    <p>Customer</p>
-                </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!-- Floating Cart & Scroll to Top Button -->
-    <button class="floating-cart">🛒</button>
-    <button class="scroll-to-top">↑</button>
-
-    <!-- Footer Section -->
-    <footer id="contact">
-        <div class="contact-info">
-            <p>Contact Us: hello@serenespace.com</p>
-        </div>
-    </footer>
-
-    <!-- Notification Pop-up -->
-    <div id="notification-popup" class="notification">
-        <p>Subscribe for the latest updates!</p>
-        <button class="close-popup">X</button>
     </div>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress"></div>
+    <!-- Quick View Product Grid -->
+    <section id="collections">
+        <h2>Collections</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1">
+                <div class="product-info">
+                    <h3>Product 1</h3>
+                    <p>$199</p>
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="product2.jpg" alt="Product 2">
+                <div class="product-info">
+                    <h3>Product 2</h3>
+                    <p>$249</p>
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <!-- More products here -->
+        </div>
+    </section>
 
-    <script>
-        // Swiper.js initialization for Testimonials Carousel
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+    <!-- Notification Pop-up -->
+    <div class="notification">
+        <p>Subscribe to our newsletter for exclusive offers!</p>
+        <button class="close-popup">×</button>
+    </div>
 
-        // Quick View Hover Effect
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseover', () => {
-                card.querySelector('.quick-view').style.display = 'block';
-            });
-            card.addEventListener('mouseout', () => {
-                card.querySelector('.quick-view').style.display = 'none';
-            });
-        });
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Serene Spaces. All rights reserved.</p>
+    </footer>
 
-        // Floating Cart Button
-        document.querySelector('.floating-cart').addEventListener('click', () => {
-            alert('Cart is empty!');
-        });
-
-        // Scroll-to-Top Button
-        document.querySelector('.scroll-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Notification Pop-up Display
-        setTimeout(() => {
-            document.getElementById('notification-popup').style.display = 'block';
-        }, 3000);
-
-        document.querySelector('.close-popup').addEventListener('click', () => {
-            document.getElementById('notification-popup').style.display = 'none';
-        });
-
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            let scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('scroll-progress').style.width = scrollPercentage + '%';
-        });
+    <!-- Live Chat Script (Tawk.to) -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/your_tawk_to_id/1b7fg4tfs';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
