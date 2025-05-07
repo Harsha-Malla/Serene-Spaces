@@ -4,85 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serene Spaces - Home Decor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Hero Section with Background Video -->
+    <!-- Hero Section -->
     <section class="hero">
-        <video autoplay loop muted>
+        <video autoplay muted loop>
             <source src="background-video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
         </video>
         <div class="hero-content">
             <h1>Welcome to Serene Spaces</h1>
-            <p>Your Dream Home Awaits</p>
-            <a href="#collections" class="btn">Explore Collections</a>
+            <p>Transform your home with elegance and warmth.</p>
+            <a href="#products" class="btn">Explore Now</a>
         </div>
     </section>
 
-    <!-- Product Search Bar -->
-    <input type="text" id="product-search" class="search-bar" placeholder="Search for products...">
+    <!-- Search -->
+    <input type="text" class="search-bar" placeholder="Search decor...">
 
-    <!-- Scroll-to-Top Button -->
-    <button id="scroll-to-top" class="scroll-to-top-btn">↑</button>
+    <!-- Countdown -->
+    <section id="countdown">
+        <h2>Limited Time Offer!</h2>
+        <div id="timer">00d 00h 00m 00s</div>
+    </section>
 
-    <!-- Special Offer Countdown -->
-    <div id="countdown">
-        <h3>Special Offer Ending In:</h3>
-        <div id="timer">
-            <span id="days"></span>:<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+    <!-- Product Section -->
+    <section id="products" class="product-grid">
+        <div class="product-card">
+            <img src="product1.jpg" alt="Decor Item 1">
+            <h3>Elegant Vase</h3>
+            <p>₹1,200</p>
+            <button class="quick-view-btn">Quick View</button>
         </div>
-    </div>
-
-    <!-- Quick View Product Grid -->
-    <section id="collections">
-        <h2>Collections</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="product1.jpg" alt="Product 1">
-                <div class="product-info">
-                    <h3>Product 1</h3>
-                    <p>$199</p>
-                    <button class="quick-view-btn">Quick View</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="product2.jpg" alt="Product 2">
-                <div class="product-info">
-                    <h3>Product 2</h3>
-                    <p>$249</p>
-                    <button class="quick-view-btn">Quick View</button>
-                </div>
-            </div>
-            <!-- More products here -->
+        <div class="product-card">
+            <img src="product2.jpg" alt="Decor Item 2">
+            <h3>Wall Art</h3>
+            <p>₹900</p>
+            <button class="quick-view-btn">Quick View</button>
+        </div>
+        <div class="product-card">
+            <img src="product3.jpg" alt="Decor Item 3">
+            <h3>Candle Holder</h3>
+            <p>₹650</p>
+            <button class="quick-view-btn">Quick View</button>
+        </div>
+        <div class="product-card">
+            <img src="product4.jpg" alt="Decor Item 4">
+            <h3>Table Plant</h3>
+            <p>₹750</p>
+            <button class="quick-view-btn">Quick View</button>
         </div>
     </section>
 
-    <!-- Notification Pop-up -->
-    <div class="notification">
-        <p>Subscribe to our newsletter for exclusive offers!</p>
-        <button class="close-popup">×</button>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top-btn" id="scrollBtn">↑</button>
+
+    <!-- Notification Popup -->
+    <div class="notification" id="popup">
+        <p>🎁 Get 10% off on your first purchase!</p>
+        <button class="close-popup" onclick="document.getElementById('popup').style.display='none'">×</button>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Serene Spaces. All rights reserved.</p>
     </footer>
 
-    <!-- Live Chat Script (Tawk.to) -->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/your_tawk_to_id/1b7fg4tfs';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
+    <!-- Scripts -->
+    <script>
+        // Countdown Timer
+        const endDate = new Date("May 10, 2025 23:59:59").getTime();
+        const timer = document.getElementById("timer");
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = endDate - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            timer.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+        }, 1000);
+
+        // Scroll to Top Button
+        const scrollBtn = document.getElementById("scrollBtn");
+        window.onscroll = () => {
+            scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+        };
+        scrollBtn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        // Show popup after delay
+        setTimeout(() => {
+            document.getElementById('popup').style.display = 'block';
+        }, 3000);
     </script>
 
-    <script src="scripts.js"></script>
+    <!-- Tawk.to Chat Integration -->
+    <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/your_tawk_id/1hxyzabc'; // Replace with your real Tawk.to ID
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+    </script>
+
 </body>
 </html>
